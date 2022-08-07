@@ -2,6 +2,13 @@ from yelpapi import YelpAPI
 import argparse
 from pprint import pprint
 
+from yelpapi import YelpAPI
+try:
+    yelp_api = YelpAPI(api_key)
+    search_results = yelp_api.search_query(args)
+finally:
+    yelp_api.close()
+    
 argparser = argparse.ArgumentParser(description='Example Yelp queries using yelpapi')
 argparser.add_argument('api_key', type=str, help='Yelp Fusion API Key')
 args = argparser.parse_args()

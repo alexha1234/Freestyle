@@ -1,4 +1,6 @@
 from yelpapi import YelpAPI
+with YelpAPI(api_key) as yelp_api:
+    search_results = yelp_api.search_query(args)
 import argparse
 from pprint import pprint
 

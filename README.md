@@ -1,3 +1,3 @@
 # Freestyle
 
-https://github.com/lanl/yelpapi is a helful resource
+https://github.com/lanl/yelpapi is a helpful resource

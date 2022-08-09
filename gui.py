@@ -12,11 +12,19 @@ window = tkinter.Tk()
 
 # MESSAGE
 
-my_message = tkinter.Message(text="Hi. Welcome to the restaurant finder", width=1000)
+my_message = tkinter.Message(text="Hi. Welcome to the restaurant chooser!", width=1000)
 
 # ENTRY (TEXT INPUT) WITH LABEL
 
-my_label = tkinter.Label(text="Input desired cuisine here:")
+my_cuisine = tkinter.Label(text="Input your desired cuisine:")
+cuisine_value = tkinter.StringVar()
+cuisine = tkinter.Entry(textvariable=cuisine_value)
+#
+my_zip = tkinter.Label(text="Input your zip code:")
+zip_value = tkinter.StringVar()
+zip = tkinter.Entry(textvariable=zip_value)
+#
+my_label = tkinter.Label(text="Input something here:")
 entry_value = tkinter.StringVar()
 my_entry = tkinter.Entry(textvariable=entry_value)
 

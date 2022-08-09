@@ -14,7 +14,7 @@ load_dotenv()
 
 api_key = os.getenv("api_key", default="OOPS, please set env var called 'SENDGRID_API_KEY'")
 
-city = input("Please choose a city: ")
+city = input("Please input your city: ")
 
 with YelpAPI(api_key) as yelp_api:
     search_results = yelp_api.search_query(location=city)

@@ -12,17 +12,17 @@ window = tkinter.Tk()
 
 # MESSAGE
 
-my_message = tkinter.Message(text="Hi. Welcome to my Example GUI Application!", width=1000)
+my_message = tkinter.Message(text="Hi. Welcome to the restaurant finder", width=1000)
 
 # ENTRY (TEXT INPUT) WITH LABEL
 
-my_label = tkinter.Label(text="Input something here:")
+my_label = tkinter.Label(text="Input desired cuisine here:")
 entry_value = tkinter.StringVar()
 my_entry = tkinter.Entry(textvariable=entry_value)
 
 # RADIO BUTTONS
 
-my_radio_label = tkinter.Label(text="Please selection one of the following options:")
+my_radio_label = tkinter.Label(text="Please select one of the following options:")
 my_radio_value = tkinter.StringVar()
 my_radio_a = tkinter.Radiobutton(text="Option A", value="A", variable=my_radio_value)
 my_radio_b = tkinter.Radiobutton(text="Option B", value="B", variable=my_radio_value)

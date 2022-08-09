@@ -14,11 +14,12 @@ load_dotenv()
 
 api_key = os.getenv("api_key", default="OOPS, please set env var called 'SENDGRID_API_KEY'")
 
-city = input("Please input your city: ")
+city = input("Please input your zip code: ")
 cuisine = input("Please input your cuisine: ")
 with YelpAPI(api_key) as yelp_api:
-    search_results = yelp_api.search_query(location=city, term = cuisine, sort_by='rating', limit = 5)
+    search_results = yelp_api.search_query(location=city, term = cuisine, sort_by='rating', limit = 5, radius=1000)
 
+print(search_results)
 #new_list = list(search_results.items())
 
 #for s in new_list:

@@ -14,18 +14,12 @@ load_dotenv()
 
 api_key = os.getenv("api_key", default="OOPS, please set env var called 'SENDGRID_API_KEY'")
 
-print(api_key)
+city = input("Please choose a city: ")
 
-# client_id = os.getenv("client_id", default="OOPS, please set env var called 'SENDER_ADDRESS'")
-
-# argparser = argparse.ArgumentParser(description='Example Yelp queries using yelpapi. '
-#                                                'Visit https://www.yelp.com/developers/v3/manage_app to get the '
-#                                                'necessary API keys.')
-# argparser.add_argument('api_key', type=str, help='Yelp Fusion API Key')
-# args = argparser.parse_args()
 with YelpAPI(api_key) as yelp_api:
-    search_results = yelp_api.search_query(location="Austin")
+    search_results = yelp_api.search_query(location=city)
 print(search_results)
+
 '''
 with YelpAPI(args.api_key) as yelp_api:
     """

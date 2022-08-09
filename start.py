@@ -18,6 +18,7 @@ city = input("Please input your city: ")
 cuisine = input("Please input your cuisine: ")
 with YelpAPI(api_key) as yelp_api:
     search_results = yelp_api.search_query(location=city, term = cuisine, sort_by='rating', limit = 5)
+
 print(search_results)
 
 '''

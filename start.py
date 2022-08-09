@@ -1,17 +1,21 @@
+from yelpapi import YelpAPI
+
+import argparse
+from pprint import pprint
+
 import pandas as pd
 import io
 import requests
 
 import os
 from dotenv import load_dotenv
-import argparse
+
 load_dotenv()
 
 api_key = os.getenv("api_key", default="OOPS, please set env var called 'SENDGRID_API_KEY'")
+print(api_key)
+
 client_id = os.getenv("client_id", default="OOPS, please set env var called 'SENDER_ADDRESS'")
-
-from yelpapi import YelpAPI
-
 
 argparser = argparse.ArgumentParser(description='Example Yelp queries using yelpapi. '
                                                 'Visit https://www.yelp.com/developers/v3/manage_app to get the '
@@ -21,7 +25,7 @@ args = argparser.parse_args()
 with YelpAPI(api_key) as yelp_api:
     search_results = yelp_api.search_query(args)
 import argparse
-from pprint import pprint
+
 with YelpAPI(args.api_key) as yelp_api:
     """
         Example search by location text and term. 

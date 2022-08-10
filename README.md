@@ -1,4 +1,4 @@
-# 'Yelp me pick'Restaurant Chooser
+# 'Yelp Me Pick' Restaurant Chooser
 
 ## Setup 
 1. Clone the "Freestyle" repo onto your desktop
@@ -26,6 +26,10 @@
     ```
     python start.py
     ```
+2. Input your zipcode in the first box and your cuisine preference in the bottom box.
+3. Hit "Click Me" for your results!
+    
+ 
 
 ## Tips 
 - https://github.com/lanl/yelpapi is a helpful resource

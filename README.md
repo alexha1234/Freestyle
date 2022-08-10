@@ -1,7 +1,7 @@
-# 'Yelp me pick'
+# 'Yelp me pick'Restaurant Chooser
 
 ## Setup 
-1. Clone the "freestyle" repo onto your desktop
+1. Clone the "Freestyle" repo onto your desktop
 
 2. Open Terminal see which make sure you are running the latest version of Python by entering the below command
     ```
@@ -14,16 +14,15 @@
     conda activate freestyle
     pip install yelpapi
     pip install pandas 
-
     ```
 
 3. In Terminal, navigate to your desktop repo using the command: 
     ```
-    cd ~/Desktop/my-secure-project/freestyle
+    cd ~/Desktop/freestyle
     ```
 
-## Run Generator
-1. Run the restaurant generator with the code below:
+## Run Restaurant Chooser
+1. Run the restaurant chooser with the code below:
     ```
     python start.py
     ```

@@ -1,3 +1,4 @@
+
 from yelpapi import YelpAPI
 
 import argparse
@@ -7,6 +8,7 @@ import pandas as pd
 import io
 import requests
 
+
 import os
 from dotenv import load_dotenv
 
@@ -14,13 +16,61 @@ load_dotenv()
 
 api_key = os.getenv("api_key", default="OOPS, please set env var called 'SENDGRID_API_KEY'")
 
-city = input("Please input your zip code: ")
-cuisine = input("Please input your cuisine: ")
-with YelpAPI(api_key) as yelp_api:
-    search_results = yelp_api.search_query(location=city, term = cuisine, sort_by='rating', limit = 5, radius=1000)
 
-for business in search_results['business']:
-    print(business['name'], business['rating'])
+#print(api_key)
+
+city = input("Please input your zip code: ")
+cuisine = input('Please input your cuisine: ')
+with YelpAPI(api_key) as yelp_api:
+    search_results = yelp_api.search_query(location = city, term = cuisine, sort_by='rating', limit = 5, radius=1000)
+
+#pprint(search_results)
+
+
+for business in search_results['businesses']:
+     print("Name: " + str(business['name']), "Address: " + str(business['location']['display_address']), "rating:" + str(business['rating']))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#request_url = "https://api.yelp.com/v3/businesses/matches"
+#response = requests.get(request_url)
+#print(response.status_code)
+#print(response.text)
+
+#client_id = os.getenv("client_id", default="OOPS, please set env var called 'SENDER_ADDRESS'")
+
+#argparser = argparse.ArgumentParser(description='Example Yelp queries using yelpapi. '
+#                                                'Visit https://www.yelp.com/developers/v3/manage_app to get the '
+#                                                'necessary API keys.')
+#argparser.add_argument('api_key', type=str, help='Yelp Fusion API Key')
+#args = argparser.parse_args()
+#with YelpAPI(api_key) as yelp_api:
+#search_results = yelp_api.search_query(location="Austin")
+#print(search_results)
+#=======
+#city = input("Please input your zip code: ")
+#cuisine = input("Please input your cuisine: ")
+#with YelpAPI(api_key) as yelp_api:
+#    search_results = yelp_api.search_query(location=city, term = cuisine, sort_by='rating', limit = 5, radius=1000)
+
+#for business in search_results['business']:
+#    print(business['name'], business['rating'])
+#>>>>>>> 4034dbf098bf64d80bb014cd00c765aed8431ba7
 '''
 with YelpAPI(args.api_key) as yelp_api:
     """

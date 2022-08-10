@@ -28,10 +28,7 @@ zip = tkinter.Entry(textvariable=zip_value)
 # BUTTON
 
 def handle_button_click():
-    print("------------------------------")
-    print("NICE. YOU CLICKED THE BUTTON")
-    print("THE ENTRY'S INPUT VALUE IS:", cuisine.get())
-    print("THE ENTRY'S INPUT VALUE IS:", zip.get())
+    pass
 
 my_button = tkinter.Button(text="Click Me", command=handle_button_click)
 

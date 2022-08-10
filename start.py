@@ -16,17 +16,72 @@ load_dotenv()
 
 api_key = os.getenv("api_key", default="OOPS, please set env var called 'SENDGRID_API_KEY'")
 
-city = input("Please input your zip code: ")
-cuisine = input('Please input your cuisine: ')
+import tkinter
+
+#
+# INITIALIZE A NEW GUI WINDOW
+#
+
+window = tkinter.Tk()
+
+#
+# INITIALIZE SOME USER INTERFACE COMPONENTS
+#
+
+# MESSAGE
+
+my_message = tkinter.Message(text="Hi. Welcome to the restaurant chooser!", width=1000)
+
+# ENTRY (TEXT INPUT) WITH LABEL
+
+my_cuisine = tkinter.Label(text="Input your desired cuisine:")
+cuisine_value = tkinter.StringVar()
+cuisine_entry = tkinter.Entry(textvariable=cuisine_value)
+#
+my_zip = tkinter.Label(text="Input your zip code:")
+zip_value = tkinter.StringVar()
+zip_code_entry = tkinter.Entry(textvariable=zip_value)
+#
+
+# BUTTON
+
+def handle_button_click():
+    print(zip_code_entry.get())
+    print(cuisine_entry.get())
+    zip_code = zip_code_entry.get()
+    cuisine = cuisine_entry.get()
+    with YelpAPI(api_key) as yelp_api:
+        search_results = yelp_api.search_query(location = zip_code, term = cuisine, sort_by= 'rating', limit = 5, radius=2000)
+    for business in search_results['businesses']:
+        print("Name: " + str(business['name']), "Address: " + str(business['location']['display_address']), "rating:" + str(business['rating']))
+
+my_button = tkinter.Button(text="Submit", command=handle_button_click)
+
+#
+# BIND THE INDIVIDUAL COMPONENTS TO THE GUI WINDOW (PACK)
+# ... THEN LAUNCH THE GUI WINDOW (MAINLOOP)
+#
+
+my_message.pack()
+
+cuisine_entry.pack()
+zip_code_entry.pack()
+
+my_button.pack()
+
+window.mainloop()
+'''
+#city = input("Please input your zip code: ")
+#cuisine = input('Please input your cuisine: ')
 with YelpAPI(api_key) as yelp_api:
-    search_results = yelp_api.search_query(location = zip, term = cuisine, sort_by= 'rating', limit = 5, radius=2000)
+    search_results = yelp_api.search_query(location = zip_code, term = cuisine, sort_by= 'rating', limit = 5, radius=2000)
 
 #pprint(search_results)
 
 
 for business in search_results['businesses']:
      print("Name: " + str(business['name']), "Address: " + str(business['location']['display_address']), "rating:" + str(business['rating']))
-
+'''
 
 
 

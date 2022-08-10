@@ -56,7 +56,7 @@ def handle_button_click():
         address_line1 = business['location']['display_address'][0]
         address_line2 = business['location']['display_address'][1]
         address = address_line1 + ", " + address_line2
-        print("Name: " + str(business['name']),"\n" "Address: " + address + "\n" "rating: " + str(business['rating']))
+        print("Name: " + str(business['name']),"\n" "Address: " + address + "\n" "Rating: " + str(business['rating']))
 
 
 my_button = tkinter.Button(text="Submit", command=handle_button_click)
@@ -87,7 +87,7 @@ for business in search_results['businesses']:
     address_line1 = business['location']['display_address'][0]
     address_line2 = business['location']['display_address'][1]
     address = address_line1 + ", " + address_line2
-    print("Name: " + str(business['name']),"\n" "Address: " + address + "\n" "rating: " + str(business['rating']))
+    print("Name: " + str(business['name']),"\n" "Address: " + address + "\n" "Rating: " + str(business['rating']))
 '''
 
 

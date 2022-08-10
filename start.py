@@ -7,7 +7,7 @@ from pprint import pprint
 import pandas as pd
 import io
 import requests
-
+import operator
 
 import os
 from dotenv import load_dotenv
@@ -22,7 +22,7 @@ api_key = os.getenv("api_key", default="OOPS, please set env var called 'SENDGRI
 city = input("Please input your zip code: ")
 cuisine = input('Please input your cuisine: ')
 with YelpAPI(api_key) as yelp_api:
-    search_results = yelp_api.search_query(location = city, term = cuisine, sort_by='rating', limit = 5, radius=2000)
+    search_results = yelp_api.search_query(location = city, term = cuisine, sort_by= 'rating', limit = 5, radius=2000)
 
 #pprint(search_results)
 

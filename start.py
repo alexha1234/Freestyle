@@ -53,7 +53,11 @@ def handle_button_click():
     with YelpAPI(api_key) as yelp_api:
         search_results = yelp_api.search_query(location = zip_code, term = cuisine, sort_by= 'rating', limit = 5, radius=2000)
     for business in search_results['businesses']:
-        print("Name: " + str(business['name']), "Address: " + str(business['location']['display_address']), "rating:" + str(business['rating']))
+        address_line1 = business['location']['display_address'][0]
+        address_line2 = business['location']['display_address'][1]
+        address = address_line1 + ", " + address_line2
+        print("Name: " + str(business['name']),"\n" "Address: " + address + "\n" "rating: " + str(business['rating']))
+
 
 my_button = tkinter.Button(text="Submit", command=handle_button_click)
 

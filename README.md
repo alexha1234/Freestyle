@@ -1,4 +1,4 @@
-# Freestyle Exercise
+# 'Yelp me pick'
 
 ## Setup 
 1. Clone the "freestyle" repo onto your desktop
@@ -20,6 +20,12 @@
 3. In Terminal, navigate to your desktop repo using the command: 
     ```
     cd ~/Desktop/my-secure-project/freestyle
+    ```
+
+## Run Generator
+1. Run the restaurant generator with the code below:
+    ```
+    python start.py
     ```
 
 ## Tips 

@@ -24,9 +24,9 @@
 
 ## Run Generator
 1. Run the restaurant generator with the code below:
-  ```
-  python start.py
-  ```
+    ```
+    python start.py
+    ```
 
 ## Tips 
 - https://github.com/lanl/yelpapi is a helpful resource

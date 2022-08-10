@@ -80,7 +80,10 @@ with YelpAPI(api_key) as yelp_api:
 
 
 for business in search_results['businesses']:
-     print("Name: " + str(business['name']), "Address: " + str(business['location']['display_address']), "rating:" + str(business['rating']))
+    address_line1 = business['location']['display_address'][0]
+    address_line2 = business['location']['display_address'][1]
+    address = address_line1 + ", " + address_line2
+    print("Name: " + str(business['name']),"\n" "Address: " + address + "\n" "rating: " + str(business['rating']))
 '''
 
 

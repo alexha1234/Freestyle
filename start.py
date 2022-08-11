@@ -13,7 +13,7 @@ api_key = os.getenv("api_key", default="OOPS, please set env var called 'SENDGRI
 #
 # INITIALIZE A NEW GUI WINDOW
 #
-
+# help from https://www.tutorialspoint.com/python/tk_message.htm 
 window = tkinter.Tk()
 window.geometry("620x570")
 window.title('Yelp Me Pick') # window title and size
@@ -32,6 +32,7 @@ label_image.place(x=0,y=100)
 
 my_message = tkinter.Message(text="Hi, welcome to the 'Yelp Me Pick' restaurant chooser!\n Please input your cuisine preference followed by your zipcode.", justify = 'center' , width=1000)
 
+
 # ENTRY (TEXT INPUT) WITH LABEL
 
 my_cuisine = tkinter.Label(text="Input your desired cuisine:")
@@ -42,6 +43,10 @@ my_zip = tkinter.Label(text="Input your zip code:")
 zip_value = tkinter.StringVar()
 zip_code_entry = tkinter.Entry(textvariable=zip_value)
 #
+
+def addToScreen(output):
+    results = tkinter.Message(text=output, width=1000, bg="#000", fg="#fff")
+    results.pack()
 
 # BUTTON
 
@@ -56,7 +61,14 @@ def handle_button_click():
         address_line1 = business['location']['display_address'][0]
         address_line2 = business['location']['display_address'][1]
         address = address_line1 + ", " + address_line2
-        print("Name: " + str(business['name']),"\n" "Address: " + address + "\n" "Rating: " + str(business['rating']))
+        output1 = str("Name: " + str(business['name'])),
+        output2 = str("Address: " + address)
+        output3 = str("Rating: " + str(business['rating']))
+        print(output1, output2, output3)
+        addToScreen(output1)
+        addToScreen(output2)
+        addToScreen(output3)
+        addToScreen(" ")
 
 
 my_button = tkinter.Button(text="Submit", command=handle_button_click)

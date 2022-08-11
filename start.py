@@ -30,7 +30,7 @@ window = tkinter.Tk()
 
 # MESSAGE
 
-my_message = tkinter.Message(text="Hi. Welcome to the restaurant chooser!", width=1000)
+my_message = tkinter.Message(text="Hi, welcome to the 'Yelp Me Pick' restaurant chooser!\nPlease input your cuisine then your zipcode.", justify='center', width=1000)
 
 # ENTRY (TEXT INPUT) WITH LABEL
 

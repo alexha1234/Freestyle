@@ -21,7 +21,7 @@ label_image.image = tkpi
 label_image.place(x=0,y=100)
 
 # MESSAGE
-my_message = tkinter.Message(text="Hi, welcome to the 'Yelp Me Pick restaurant chooser!\n Please input your cuisine preference followed by your zipcode.", justify = 'center' , width=1000)
+my_message = tkinter.Message(text="Hi, welcome to the 'Yelp Me Pick' restaurant chooser!\n Please input your cuisine preference followed by your zipcode.", justify = 'center' , width=1000)
 
 # ENTRY (TEXT INPUT) WITH LABEL
 my_cuisine = tkinter.Label(text="Input your desired cuisine:")

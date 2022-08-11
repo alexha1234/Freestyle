@@ -31,5 +31,6 @@
     
  
 
-## Tips 
-- https://github.com/lanl/yelpapi is a helpful resource
+## Helpful Resources 
+- https://github.com/lanl/yelpapi
+- https://www.tutorialspoint.com/python/tk_message.htm 

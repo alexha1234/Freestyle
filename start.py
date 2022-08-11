@@ -45,7 +45,7 @@ zip_code_entry = tkinter.Entry(textvariable=zip_value)
 #
 
 def addToScreen(output):
-    results = tkinter.Message(text=output, width=1000, bg="#000", fg="#fff")
+    results = tkinter.Label(text=output, width=1000, bg="#000", fg="#fff")
     results.pack()
 
 # BUTTON

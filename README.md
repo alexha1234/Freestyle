@@ -10,7 +10,6 @@
 
 3. Create and activate a new virtual environment and install package dependencies
    ```
-    conda create -n freestyle python=3.8
     conda activate freestyle
     pip install yelpapi
     pip install pandas 
@@ -26,8 +25,9 @@
     ```
     python start.py
     ```
-2. Input your zipcode in the first box and your cuisine preference in the bottom box.
-3. Hit "Click Me" for your results!
+2. Input your cuisine preference in the first box and your zipdcode in the bottom box.
+3. Hit "Submit" for your results! Don't like your options, change your input for other options.
+4. Happy eating! 
     
  
 
